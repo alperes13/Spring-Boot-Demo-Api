@@ -1,0 +1,94 @@
+
+
+--------------------------------------------MVC----------------------------------------------------
+
+MVC = Model, View, Controller
+------------------------------
+Controller: Managing request process.
+
+View: Execute of incoming request with view.
+
+Model: We are transferring data between of Controller and View, with Model unit.
+-----------------------------
+example : check ---> CityController.java
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+									Usage of @Annotations
+									
+@Table(name = "table_name") === Using this annotation for indicating table working with which table. ---> Entity Classes
+
+@Entity === Using this annotation for indicating there is a object from database. ---> Entity Classes
+
+@Id === indicating to this field are id column. ---> Entity Classes
+
+@Column(name= "column_name") === This is for indicating to we working with which column. ---> Entity Classes
+
+@Transactional ---> this is for using sessions ---> DataAccess Classes
+
+@Repository ---> Showing data access class ---> Data Access
+
+@Autowired ---> injection to constructor,finding necessary packages ---> DataAccess, Business Classes
+
+@Service ---> Using this annotation for service classes ---> Business Classes
+
+@RestController ---> Using this annotation for showing controller class ---> Api Classes
+
+@RequestMapping("/api") ---> This is annotation for CityController. ---> Api Classes
+
+@GetMapping("/xxx") ---> "xxx" is extension. It is will execute where to annotated of methods ---> Api Classes
+
+@PostMapping("/xxx") ---> Void operations, no return ---> Api Classes
+
+@RequestBody ---> Using this annotation for getting parameters from body ---> Api Classes
+
+@PathVariable ---> Annotation for getting parameters in path.
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+								Configurations of Spring boot
+----------------
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>		
+	<artifactId>spring-boot-devtools</artifactId>   
+</dependency>
+
+--->This for devtools
+
+----------------
+----------------
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+---> This is what we using packpage for connecting database.
+
+----------------
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+											JPA
+JPA is data access technique, hibernate and spring implementing JPA as standard.
+
+EntityManager class maching with sessions units
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+MYSQL CONNECTION
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://<hostname>:<host>/world?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.29</version>
+</dependency>
+
+----------------------------------------------------------------------------------------------------
